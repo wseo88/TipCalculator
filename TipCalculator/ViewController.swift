@@ -23,7 +23,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Set up initial tip amount label
-        setUpTipAmountLabel()
+        var defaultTipFloat = getDefaultTipPercentage() * 100
+        var defaultTipPercentage = (defaultTipFloat as NSNumber).intValue
+
+        tipAmountLabel.text = "Tip (\(defaultTipPercentage)%):"
 
         tipLabel.text = defaultTotalLabelText
         totalLabel.text = defaultTipLabelText
@@ -40,6 +43,9 @@ class ViewController: UIViewController {
 
         // Have current tip percentage selected when root view controller appears
         updateTipControlLabelIndex(currentTipPercentage)
+
+        // Update tip amount label after updating the tip control index...
+        updateTipAmount()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,12 +61,11 @@ class ViewController: UIViewController {
         var tip = billAmount * tipPercentage
         var total = billAmount + tip
 
-        setUpTipAmountLabel()
-        tipLabel.text = "$\(tip)"
-        totalLabel.text = "$\(total)"
+        // Update tip amount label
+        updateTipAmount()
 
         tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "%.2f", total)
+        totalLabel.text = String(format: "$%.2f", total)
     }
 
     @IBAction func onTap(sender: AnyObject)
@@ -74,7 +79,7 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = find(defaultTipPercentages, tipPercentage)!
     }
 
-    func setUpTipAmountLabel()
+    func updateTipAmount()
     {
         var tipInDecimal = defaultTipPercentages[tipControl.selectedSegmentIndex]
         var tipPercentage = tipInDecimal * 100
