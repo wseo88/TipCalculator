@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        var currentTipPercentage = getDefaultTipPercentage()
+        updateTipControlLabelIndex(currentTipPercentage)
+//        println("\(currentTipPercentage)")
+
         tipLabel.text = defaultTotalLabelText
         totalLabel.text = defaultTipLabelText
         splitAmountLabel.text = defaultSplitAmountLabelText
@@ -36,8 +40,6 @@ class ViewController: UIViewController {
     @IBAction func onEditingChanged(sender: AnyObject)
     {
         var tipPercentage = defaultTipPercentages[tipControl.selectedSegmentIndex]
-
-        
 
         var billAmount = (billField.text as NSString).doubleValue
         var tip = billAmount * tipPercentage
@@ -55,5 +57,10 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
 
+    // Helper Methods
+    func updateTipControlLabelIndex(tipPercentage: Double)
+    {
+        tipControl.selectedSegmentIndex = find(defaultTipPercentages, tipPercentage)!
+    }
 }
 

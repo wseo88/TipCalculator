@@ -24,17 +24,17 @@ class SettingsViewController: UIViewController {
     // Helper Methods
     @IBAction func onEightTeenPercentButtonPressed(sender: AnyObject)
     {
-
+        setDefaultTipPercentage(0.18)
     }
 
     @IBAction func onTwentyPercentButtonPressed(sender: AnyObject)
     {
-
+        setDefaultTipPercentage(0.20)
     }
 
     @IBAction func onTwentyTwoPercentButtonPressed(sender: AnyObject)
     {
-
+        setDefaultTipPercentage(0.22)
     }
 
     @IBAction func onExitBarbButtonItemPressed(sender: AnyObject)
