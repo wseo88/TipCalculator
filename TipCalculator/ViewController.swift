@@ -16,20 +16,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var splitBillControl: UISegmentedControl!
     @IBOutlet weak var splitAmountLabel: UILabel!
+    @IBOutlet weak var tipAmountLabel: UILabel!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
-        var currentTipPercentage = getDefaultTipPercentage()
-        updateTipControlLabelIndex(currentTipPercentage)
-//        println("\(currentTipPercentage)")
+        // Set up initial tip amount label
+        setUpTipAmountLabel()
 
         tipLabel.text = defaultTotalLabelText
         totalLabel.text = defaultTipLabelText
         splitAmountLabel.text = defaultSplitAmountLabelText
 
+    }
+
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+
+        // Get current tip percentage using NSUserDefault
+        var currentTipPercentage = getDefaultTipPercentage()
+
+        // Have current tip percentage selected when root view controller appears
+        updateTipControlLabelIndex(currentTipPercentage)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +55,7 @@ class ViewController: UIViewController {
         var tip = billAmount * tipPercentage
         var total = billAmount + tip
 
+        setUpTipAmountLabel()
         tipLabel.text = "$\(tip)"
         totalLabel.text = "$\(total)"
 
@@ -61,6 +72,13 @@ class ViewController: UIViewController {
     func updateTipControlLabelIndex(tipPercentage: Double)
     {
         tipControl.selectedSegmentIndex = find(defaultTipPercentages, tipPercentage)!
+    }
+
+    func setUpTipAmountLabel()
+    {
+        var tipInDecimal = defaultTipPercentages[tipControl.selectedSegmentIndex]
+        var tipPercentage = tipInDecimal * 100
+        tipAmountLabel.text = String(format: "Tip (%.f%%):", tipPercentage)
     }
 }
 

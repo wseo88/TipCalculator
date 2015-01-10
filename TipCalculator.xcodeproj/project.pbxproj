@@ -65,6 +65,7 @@
 		907FBED81A61066600843AFC = {
 			isa = PBXGroup;
 			children = (
+				907FBEEA1A61066600843AFC /* Main.storyboard */,
 				907FBEE31A61066600843AFC /* TipCalculator */,
 				907FBEF91A61066600843AFC /* TipCalculatorTests */,
 				907FBEE21A61066600843AFC /* Products */,
@@ -85,7 +86,6 @@
 			children = (
 				907FBEE61A61066600843AFC /* AppDelegate.swift */,
 				907FBF081A6119C300843AFC /* View Controllers */,
-				907FBEEA1A61066600843AFC /* Main.storyboard */,
 				907FBF0D1A61240D00843AFC /* Helpers */,
 				907FBEED1A61066600843AFC /* Images.xcassets */,
 				907FBEEF1A61066600843AFC /* LaunchScreen.xib */,
@@ -270,6 +270,7 @@
 				907FBEEB1A61066600843AFC /* Base */,
 			);
 			name = Main.storyboard;
+			path = TipCalculator;
 			sourceTree = "<group>";
 		};
 		907FBEEF1A61066600843AFC /* LaunchScreen.xib */ = {

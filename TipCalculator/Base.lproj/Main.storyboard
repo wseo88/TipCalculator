@@ -20,7 +20,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KsQ-Z2-NgA">
-                                <rect key="frame" x="16" y="162" width="24" height="21"/>
+                                <rect key="frame" x="16" y="162" width="137" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -134,6 +134,7 @@
                         <outlet property="billField" destination="tpl-I8-Aoi" id="bM0-9O-wn2"/>
                         <outlet property="splitAmountLabel" destination="jg2-kH-xyE" id="t2X-c9-XAH"/>
                         <outlet property="splitBillControl" destination="yjJ-pD-5hp" id="vnP-Qe-8NQ"/>
+                        <outlet property="tipAmountLabel" destination="KsQ-Z2-NgA" id="jgo-FI-NRf"/>
                         <outlet property="tipControl" destination="VvG-5B-kjv" id="psa-Na-RHf"/>
                         <outlet property="tipLabel" destination="Paz-BT-gps" id="jCR-8p-sTF"/>
                         <outlet property="totalLabel" destination="lE4-Uk-29k" id="UB4-7Y-tfx"/>
