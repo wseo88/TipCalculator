@@ -13,6 +13,9 @@
 		907FBEEE1A61066600843AFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907FBEED1A61066600843AFC /* Images.xcassets */; };
 		907FBEF11A61066600843AFC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907FBEEF1A61066600843AFC /* LaunchScreen.xib */; };
 		907FBEFD1A61066600843AFC /* TipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907FBEFC1A61066600843AFC /* TipCalculatorTests.swift */; };
+		907FBF071A6119B600843AFC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907FBF061A6119B600843AFC /* SettingsViewController.swift */; };
+		907FBF0A1A611F0C00843AFC /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907FBF091A611F0C00843AFC /* DefaultValues.swift */; };
+		907FBF0C1A61229A00843AFC /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907FBF0B1A61229A00843AFC /* PersistenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		907FBEF61A61066600843AFC /* TipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		907FBEFB1A61066600843AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907FBEFC1A61066600843AFC /* TipCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorTests.swift; sourceTree = "<group>"; };
+		907FBF061A6119B600843AFC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		907FBF091A611F0C00843AFC /* DefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		907FBF0B1A61229A00843AFC /* PersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				907FBEE61A61066600843AFC /* AppDelegate.swift */,
-				907FBEE81A61066600843AFC /* ViewController.swift */,
+				907FBF081A6119C300843AFC /* View Controllers */,
 				907FBEEA1A61066600843AFC /* Main.storyboard */,
+				907FBF0D1A61240D00843AFC /* Helpers */,
 				907FBEED1A61066600843AFC /* Images.xcassets */,
 				907FBEEF1A61066600843AFC /* LaunchScreen.xib */,
 				907FBEE41A61066600843AFC /* Supporting Files */,
@@ -110,6 +117,24 @@
 				907FBEFB1A61066600843AFC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		907FBF081A6119C300843AFC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				907FBEE81A61066600843AFC /* ViewController.swift */,
+				907FBF061A6119B600843AFC /* SettingsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		907FBF0D1A61240D00843AFC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				907FBF091A611F0C00843AFC /* DefaultValues.swift */,
+				907FBF0B1A61229A00843AFC /* PersistenceHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +239,9 @@
 			files = (
 				907FBEE91A61066600843AFC /* ViewController.swift in Sources */,
 				907FBEE71A61066600843AFC /* AppDelegate.swift in Sources */,
+				907FBF071A6119B600843AFC /* SettingsViewController.swift in Sources */,
+				907FBF0C1A61229A00843AFC /* PersistenceHelper.swift in Sources */,
+				907FBF0A1A611F0C00843AFC /* DefaultValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
