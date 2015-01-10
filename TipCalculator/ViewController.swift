@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitAmountLabel: UILabel!
     @IBOutlet weak var tipAmountLabel: UILabel!
 
+    var numberOfSplits: Int!
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -25,13 +27,14 @@ class ViewController: UIViewController {
         // Set up initial tip amount label
         var defaultTipFloat = getDefaultTipPercentage() * 100
         var defaultTipPercentage = (defaultTipFloat as NSNumber).intValue
-
         tipAmountLabel.text = "Tip (\(defaultTipPercentage)%):"
 
         tipLabel.text = defaultTotalLabelText
         totalLabel.text = defaultTipLabelText
         splitAmountLabel.text = defaultSplitAmountLabelText
 
+        // Initialize numberOfSplits
+        numberOfSplits = 1
     }
 
     override func viewWillAppear(animated: Bool)
@@ -55,17 +58,8 @@ class ViewController: UIViewController {
 
     @IBAction func onEditingChanged(sender: AnyObject)
     {
-        var tipPercentage = defaultTipPercentages[tipControl.selectedSegmentIndex]
-
-        var billAmount = (billField.text as NSString).doubleValue
-        var tip = billAmount * tipPercentage
-        var total = billAmount + tip
-
-        // Update tip amount label
+        updateTipAndTotalLabels()
         updateTipAmount()
-
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
     }
 
     @IBAction func onTap(sender: AnyObject)
@@ -84,6 +78,38 @@ class ViewController: UIViewController {
         var tipInDecimal = defaultTipPercentages[tipControl.selectedSegmentIndex]
         var tipPercentage = tipInDecimal * 100
         tipAmountLabel.text = String(format: "Tip (%.f%%):", tipPercentage)
+    }
+
+    func updateTipAndTotalLabels()
+    {
+        var tipPercentage = defaultTipPercentages[tipControl.selectedSegmentIndex]
+
+        var billAmount = (billField.text as NSString).doubleValue
+        var tip = billAmount * tipPercentage
+        var total = billAmount + tip
+        var splitAmount = total / Double(numberOfSplits)
+
+        tipLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
+        splitAmountLabel.text = String(format: "$%.2f", splitAmount)
+    }
+
+    @IBAction func onSplitBillControlUpdated(sender: AnyObject)
+    {
+        switch splitBillControl.selectedSegmentIndex
+        {
+        case 0:
+            numberOfSplits = 1
+        case 1:
+            numberOfSplits = 2
+        case 2:
+            numberOfSplits = 3
+        case 3:
+            numberOfSplits = 4
+        default:
+            break
+        }
+        updateTipAndTotalLabels()
     }
 }
 

@@ -7,6 +7,12 @@
         <!--Tip Calculator-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="b7W-Fn-W77">
+                    <connections>
+                        <action selector="onTap:" destination="vXZ-lx-hvc" id="H0e-cr-2Qg"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -20,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KsQ-Z2-NgA">
-                                <rect key="frame" x="16" y="162" width="137" height="21"/>
+                                <rect key="frame" x="16" y="162" width="127" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -89,6 +95,9 @@
                                     <segment title="3"/>
                                     <segment title="4"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSplitBillControlUpdated:" destination="vXZ-lx-hvc" eventType="valueChanged" id="DjM-E0-qtr"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iij-Qj-tWq">
                                 <rect key="frame" x="16" y="442" width="178" height="36"/>
@@ -134,18 +143,12 @@
                         <outlet property="billField" destination="tpl-I8-Aoi" id="bM0-9O-wn2"/>
                         <outlet property="splitAmountLabel" destination="jg2-kH-xyE" id="t2X-c9-XAH"/>
                         <outlet property="splitBillControl" destination="yjJ-pD-5hp" id="vnP-Qe-8NQ"/>
-                        <outlet property="tipAmountLabel" destination="KsQ-Z2-NgA" id="jgo-FI-NRf"/>
+                        <outlet property="tipAmountLabel" destination="KsQ-Z2-NgA" id="uVS-lA-GJt"/>
                         <outlet property="tipControl" destination="VvG-5B-kjv" id="psa-Na-RHf"/>
                         <outlet property="tipLabel" destination="Paz-BT-gps" id="jCR-8p-sTF"/>
                         <outlet property="totalLabel" destination="lE4-Uk-29k" id="UB4-7Y-tfx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="b7W-Fn-W77">
-                    <connections>
-                        <action selector="onTap:" destination="vXZ-lx-hvc" id="H0e-cr-2Qg"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="631" y="293"/>
         </scene>
